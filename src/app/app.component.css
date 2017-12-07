@@ -1,0 +1,11 @@
+.app-container {
+  width: 100%;
+  min-height: 1000px;
+  margin:0;
+  padding:0;
+  background-color: rgb(67, 100, 161)
+}
+body {
+  padding: 0;
+  margin: 0;
+}

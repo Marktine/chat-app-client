@@ -1,0 +1,9 @@
+<div class="chat-wrapper">
+  <ul class="messages-wrapper">
+    <li *ngFor="let recvMessage of receivedMessages" class="messages">{{recvMessage}}</li>
+  </ul>
+  <div class="chat-input">
+    <input type="text" [(ngModel)]="message">
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>
