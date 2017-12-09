@@ -1,9 +1,24 @@
 <div class="chat-wrapper">
-  <ul class="messages-wrapper">
-    <li *ngFor="let recvMessage of receivedMessages" class="messages">{{recvMessage}}</li>
+  <ul *ngIf="receivedMessages !== null" class="messages-wrapper">
+    <li *ngFor="let recvMessage of receivedMessages" class="messages">
+      <div class="message-section">
+        {{recvMessage.username}}: {{recvMessage.message}}
+        <span>
+            {{recvMessage.createdDate | date : "dd/MM/yyyy h:mm a"}}
+        </span>
+      </div>
+    </li>
+    <li class="notification" *ngIf="Notifications !== null">
+      <div *ngFor="let noti of Notifications">
+        {{noti}}
+      </div>
+    </li>
   </ul>
   <div class="chat-input">
-    <input type="text" [(ngModel)]="message">
-    <button (click)="sendMessage()">Send</button>
+    <input type="text" [(ngModel)]="message.username">
+    <div class="textMessage" *ngIf="message.username !== 'unknown' && message.username !== ''">
+      <input type="text" [(ngModel)]="message.message">
+      <button (click)="sendMessage()">Send</button>
+    </div>
   </div>
 </div>

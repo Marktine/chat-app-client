@@ -23,9 +23,19 @@
 
 .chat-wrapper .messages-wrapper .messages {
   border-bottom: 1px solid #c2c2c2;
+  text-align: left;
+  margin-left: 5px;
+}
+
+.chat-wrapper .messages-wrapper .messages .message-section span {
+  float: right;
+  margin-right: 5px;
+  font-size: 11px;
+  color: #b1b1b1
 }
 
 .chat-wrapper .chat-input {
   padding-top: 5px;
   width: 95%;
+  display: inline-flex;
 }
