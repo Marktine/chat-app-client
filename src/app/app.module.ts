@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 
 import { RouterModule, Router } from '@angular/router';
 
@@ -30,6 +32,7 @@ export const firebaseConfig = {
 const appRoutes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: SignupComponent},
+  {path: 'chat', component: ChatComponent},
   {path: '', redirectTo: 'login', pathMatch: 'full'},
 ]
 
@@ -49,6 +52,7 @@ const appRoutes = [
     RouterModule.forRoot(
       appRoutes,
     ),
+    AngularFireDatabaseModule
   ],
   providers: [ChatService, SignupService, LoginService],
   bootstrap: [AppComponent]

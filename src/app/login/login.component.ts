@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
    localLogin() {
      this.loginService.localLogin(this.email, this.password).then(
        (success) => {
-         console.log('success!');
+         this.rourter.navigateByUrl('/chat');
        }
      ).catch(
        (err) => {

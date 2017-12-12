@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { SignupService } from '../services/signup.service';
 
 import { User } from '../models/user';
+import { ReturnStatus } from '../models/returnStatus';
 
 @Component({
   selector: 'app-signup',
@@ -19,6 +20,7 @@ export class SignupComponent implements OnInit {
   password: string;
   emailAddress: string;
   phoneNumber: string;
+  returnStatus: ReturnStatus = new ReturnStatus();
 
   constructor(private signupService: SignupService, private router: Router) { }
 
@@ -33,14 +35,7 @@ export class SignupComponent implements OnInit {
       phoneNumber: this.phoneNumber,
     });
     console.log(this.userInfo);
-    this.signupService.addUser(this.userInfo.emailAddress, this.userInfo.password).then(
-      (success) => {
-        console.log('success');
-        this.router.navigateByUrl('/login');
-      }
-    ).catch((err) => {
-      this.error = err;
-    });
+    this.returnStatus = this.signupService.addUser(this.userInfo);
   }
 
 }
