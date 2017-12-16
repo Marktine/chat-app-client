@@ -33,7 +33,7 @@ const appRoutes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: SignupComponent},
   {path: 'chat', component: ChatComponent},
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: '', redirectTo: 'chat', pathMatch: 'full'},
 ]
 
 @NgModule({
