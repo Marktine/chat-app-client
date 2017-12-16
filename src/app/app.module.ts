@@ -19,6 +19,8 @@ import { SignupComponent } from './signup/signup.component';
 
 import { LoginService } from './services/login.service';
 import { SignupService } from './services/signup.service';
+import { AuthGuardService } from './auth-guard.service';
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCzq8AOq-AMibUu_03F1eNL2vw-yyQnB7E",
@@ -32,7 +34,7 @@ export const firebaseConfig = {
 const appRoutes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: SignupComponent},
-  {path: 'chat', component: ChatComponent},
+  {path: 'chat', component: ChatComponent, canActivate: [AuthGuardService]},
   {path: '', redirectTo: 'login', pathMatch: 'full'},
 ]
 
@@ -54,7 +56,7 @@ const appRoutes = [
     ),
     AngularFireDatabaseModule
   ],
-  providers: [ChatService, SignupService, LoginService],
+  providers: [ChatService, SignupService, LoginService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

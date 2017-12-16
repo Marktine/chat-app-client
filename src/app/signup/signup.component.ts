@@ -11,8 +11,8 @@ import { ReturnStatus } from '../models/returnStatus';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
 
+export class SignupComponent implements OnInit {
   userInfo: User = new User();
   error: string;
 
@@ -22,7 +22,8 @@ export class SignupComponent implements OnInit {
   phoneNumber: string;
   returnStatus: ReturnStatus = new ReturnStatus();
 
-  constructor(private signupService: SignupService, private router: Router) { }
+  constructor
+   (private signupService: SignupService, private router: Router) { }
 
   ngOnInit() {
   }

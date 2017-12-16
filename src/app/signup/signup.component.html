@@ -2,7 +2,7 @@
   <div class="form-header">
     <h4>REGISTER</h4>
     <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="returnStatus.isError">
-      <span>{{returnStatus.message}}</span>
+      <span>{{returnStatus.message.message}}</span>
     </div>
     <div class="alert alert-info alert-dismissible fade show" role="alert" *ngIf="!returnStatus.isError">
       <span>{{returnStatus.message}}</span>

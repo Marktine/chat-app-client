@@ -1,5 +1,28 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center" class="app-container">
-  <router-outlet></router-outlet>
+	<nav class="navbar navbar-toggleable-md  navbar-inverse bg-inverse">
+		<a href="#" class="navbar-brand">Navbar</a>
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			</li>
+		</ul>
+		<ul class="navbar-nav" *ngIf="userId; else notLoggedIn" >
+			<li class="nav-item active">
+				<a href="#">User has Logged In</a>
+			</li>
+		</ul>
+		<ng-template #notLoggedIn>
+			<ul #notLoggedIn  class="navbar-nav">
+				<li clas="nav-item active">
+					<a [routerLink]="['/login']"  class="nav-link" >Login<span class="sr-only">(current)</span></a>			
+				</li>
+				<li class="nav-item active">
+					<a [routerLink]="['/register']"  class="nav-link" >Register <span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+		</ng-template>
+		</nav>
+  <router-outlet (deactivate)="isLoggedIn($event)"></router-outlet>
 </div>
 
