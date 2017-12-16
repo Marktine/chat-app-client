@@ -1,4 +1,7 @@
-<div class="chat-wrapper">
+<div class="chat-app">
+  <div class="header">
+
+  </div>
   <ul *ngIf="receivedMessages !== null" class="messages-wrapper">
     <li *ngFor="let recvMessage of receivedMessages" class="messages">
       <div class="message-section">
@@ -14,11 +17,14 @@
       </div>
     </li>
   </ul>
-  <div class="chat-input">
-    <input type="text" [(ngModel)]="message.username">
-    <div class="textMessage" *ngIf="message.username !== 'unknown' && message.username !== ''">
-      <input type="text" [(ngModel)]="message.message">
-      <button (click)="sendMessage()">Send</button>
+ 
+    <div class="chat-input">
+      <input class="userName" type="text" [(ngModel)]="message.username">
+      <div class="textMessage" *ngIf="message.username !== 'unknown' && message.username !== ''">
+        <input type="text"class="Type" [(ngModel)]="message.message"
+        (keyup.enter)="sendMessage()" placeholder="Types message">
+        <button class="submit" (click)="sendMessage()">Send</button>
+      </div>
     </div>
-  </div>
+  
 </div>

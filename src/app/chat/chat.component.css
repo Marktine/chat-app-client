@@ -1,3 +1,22 @@
+.chat-app{
+  width: 350px;
+  height: 550px;
+  border-radius: 5px 5px 5px 5px;
+  position: absolute;
+  left: 35%;
+  top: 15%;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.header{
+  top: 0px;
+  height: 35px;
+  border-radius: 5px 5px 0 0;
+  background-color: lightseagreen;
+  color: #ffffff
+}
+
 .messages-wrapper {
   padding-top: 0 !important;
   margin: 0 !important;
@@ -7,20 +26,43 @@
   padding: 0;
 }
 
-.chat-wrapper {
+.chat-input {
+  position: relative;
+  width: 100%;
+  height: 35px;
+  display: inline-flex;
+  border-radius: 0px 0px 5px 5px;
+} 
+.userName{
+  width: 20%;
+  float: left;
+  padding: 10px;
+}
+.textMessage{
+  width: 100%;
+  background: rgba(7, 7, 7, 0.3);
+}
+.Type{
+  width: 100%;
+  height: 35px;
+  color: #ffffff;
+  background: rgba(7, 7, 7, 0.3);
+  padding: 5px;
+}
+input::placeholder{
+  color: #ffffff;
+}
+.submit{
   position: absolute;
-  top: 35%;
-  left: 35%;
-  background-color: white;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 0;
-  padding-right: 0;
-  border-radius: 2px 2px 5px 5px;
-  color: black;
-  width: 400px;
+  z-index: 1;
+  top: 0px;
+  right: 0px;
+  height: 35px;
+  border-radius: 0px 5px 5px 0px;
+  color: lightslategray;
 }
 
+/*
 .chat-wrapper .messages-wrapper .messages {
   border-bottom: 1px solid #c2c2c2;
   text-align: left;
@@ -33,9 +75,5 @@
   font-size: 11px;
   color: #b1b1b1
 }
+*/
 
-.chat-wrapper .chat-input {
-  padding-top: 5px;
-  width: 95%;
-  display: inline-flex;
-}
